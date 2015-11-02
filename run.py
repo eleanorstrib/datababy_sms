@@ -6,7 +6,13 @@ app = Flask(__name__)
 @app.route("/", methods=['GET', 'POST'])
 def hello():
 	resp = twilio.twiml.Response()
-	resp.message("Thanks for the data!  We will update your account.")
+	incoming_message = request.values.get('Body', None)
+	if incoming_message == 'bottle':
+		resp.message("Got it - bottle!")
+		print incoming_message
+	else:
+		resp.message("I didn't understand.")
+		print incoming_message
 	return str(resp)
 
 
