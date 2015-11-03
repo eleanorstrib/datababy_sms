@@ -17,7 +17,7 @@ def hello():
 	elif incoming_message =='help':
 		resp.message(help_message)
 	else:
-		resp.message("Oops - something went wrong.", help_message)
+		resp.message("We didn't understand your message - text 'help' for a list of possible events or try again.")
 	return str(resp)
 
 
