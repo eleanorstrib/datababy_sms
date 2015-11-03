@@ -17,7 +17,7 @@ def hello():
 	if incoming_message in events:
 		resp.message("We've recorded a %s for your baby." % (incoming_message))
 	else:
-		resp.message("We didn't understand your message. You can text any of the following terms to record an event for your baby:", events)
+		resp.message("We didn't understand your message. You can text any of the following terms to record an event for your baby: %s" % (events))
 	return str(resp)
 
 
