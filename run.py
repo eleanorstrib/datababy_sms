@@ -14,7 +14,7 @@ def hello():
  	help_message = "Text one of the following phrases to record your baby's activity:", events
 	
 	if incoming_message in events:
-		resp.message(incoming_message)
+		resp.message("We've recorded a  %s for your baby at %s." % format(incoming_message, incoming_message_received))
 	# elif incoming_message == "help":
 	# 	resp.message(help_message)
 	# else:
