@@ -8,14 +8,14 @@ app = Flask(__name__)
 @app.route("/", methods=['GET', 'POST'])
 def hello():
 	resp = twilio.twiml.Response()
-	incoming_message = request.values.get('Body', None)
-	incoming_message_received = request.values.get('DateSent', 'unknown')
+	incoming_message = (request.values.get('Body', None)).lower()
+	incoming_message_received = request.values.get('DateSent', None)
 	events = ['bottle', 'breast start', 'breast end', 'wet diaper', 'soiled diaper', 'sleep start', 'sleep end']
  	help_message = "Text one of the following phrases to record your baby's activity:", events
 	
 	if incoming_message in events:
-		resp.message("Got it!  We've recorded a", incoming_message, "for your baby at", incoming_message_received, ".")
-	elif incoming_message =='help':
+		resp.message(incoming_message_received)
+	elif incoming_message == "help":
 		resp.message(help_message)
 	else:
 		resp.message("We didn't understand your message - text 'help' for a list of possible events or try again.")
