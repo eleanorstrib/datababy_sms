@@ -16,7 +16,7 @@ def hello():
 	
 	if incoming_message in events:
 		resp.message("We've recorded a  %s for your baby." % (incoming_message)
-	elif incoming_message == "info":
+	if incoming_message == "info":
 		resp.message(help_message)
 	else:
 		resp.message("We didn't understand your message - text 'info' for a list of possible events or try again.")
