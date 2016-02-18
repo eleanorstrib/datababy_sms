@@ -11,11 +11,10 @@ def hello():
 	incoming_message = request.values.get('Body', None)
 	if incoming_message is not None:
 		incoming_message = incoming_message.lower()
-	events = ['bottle', 'breast start', 'breast end', 'wet diaper', 'soiled diaper', 'sleep start', 'sleep end']
- 	help_message = ("Text one of the following phrases to record your baby's activity:", events)
-	
+	events = ['bottle', 'breast start', 'breast end', 'wet diaper', 'soiled diaper', 'sleep start', 'sleep end', 'fussy start', 'fussy end', 'dairy start', 'dairy end']
+ 	
 	if incoming_message in events:
-		resp.message("We've recorded a %s for your baby." % (incoming_message))
+		resp.message("We've recorded a %s." % (incoming_message))
 	else:
 		resp.message("We didn't understand your message. You can text any of the following terms to record an event for your baby: %s" % (events))
 	return str(resp)

@@ -1,0 +1,10 @@
+{
+  "applications": {
+    "_default": {
+      "link": "data_baby"
+    },
+    "data_baby": {
+      "applicationId": "pOUHVcYSudZI2HrbU0359U0JQY8pKkMkhNb1v7kI"
+    }
+  }
+}
